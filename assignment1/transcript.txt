@@ -1,0 +1,49 @@
+
+TRANSCRIPT:
+
+write(2, 34371063808, 1)			= 1
+read(0, 140737488349258, 1)			= 1
+write(2, 34371063808, 1)			= 1
+read(0, 140737488349258, 1)			= 1
+write(2, 34371063808, 1)			= 1
+ioctl(0, 2150396949, 34370393912)			= 0
+fork()			= 898
+setpgid(898, 898)			= 0
+wait4(-1, 140737488349068, 6)			= 898
+ioctl(10, 2147775606, 140737488349196)			= 0
+wait4(-1, 140737488349644, 7)			= -1
+fstatat(-100, 34370973704, 140737488349568)			= 0
+sigprocmask(1, 140737488349600, 140737488349616)			= 0
+ioctl(0, 1074295912, 140737488349520)			= 0
+sigprocmask(3, 140737488349616)			= 0
+sigprocmask(1, 140737488349392, 140737488349408)			= 0
+ioctl(0, 1074295912, 140737488349312)			= 0
+sigprocmask(3, 140737488349408)			= 0
+__sysctl(140737488349056, 2, 2273015, 140737488349048)			= 0
+geteuid()			= 1001
+write(2, 34371063808, 20)			= 20
+ioctl(0, 1076655123, 34370394000)			= 0
+ioctl(0, 2150396949, 34370393956)			= 0
+read(0, 140737488349258, 1)		
+
+*********************************************************************************
+
+REPRODUCING RESULTS:
+1. Setup up two terminals
+2. Type `echo $$` to get pid of 2nd terminal
+3. Type `sudo dtrace -qs mystrace.d pid` and type the pid number found in step 2
+4. Hit enter and then go over to the 2nd terminal and enter `ls`
+5. In the 1st terminal hit ctrl+c to end this dtrace process
+
+*********************************************************************************
+
+LIMITATIONS:
+- Formatting types was difficult. If this were a larger project, I would go 
+  through each system call and group them with matching argument types/placements
+  In doing this, I could create custom printf statements that have the correct 
+  types.
+- The output differs from `truss ls` as truss ls shows more mmaps and is generally
+  more complicated. I am not sure the reason for this.
+- Formatting spacing is difficult. If this were a larger project, I would do a 
+  better job spacing and figuring how many tabs each system call requires to 
+  align them.
