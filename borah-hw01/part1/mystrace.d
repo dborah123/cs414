@@ -44,7 +44,6 @@ syscall:::entry
 	printf("%s(%d, %d)\t\t", probefunc, arg0, arg1);
 }
 
-
 syscall:::entry
 /arg0 != 0 && arg1 == 0 && pid == $1/
 {
@@ -56,7 +55,6 @@ syscall:::entry
 {
 	printf("%s()\t\t", probefunc);
 }
-
 
 /* RETURN PROBES */
 syscall:::return
