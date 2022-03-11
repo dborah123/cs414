@@ -2,3 +2,4 @@ assignment*/*.pdf
 *.pdf
 wheres-the-heap
 *.o
+whither-mmap
