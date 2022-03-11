@@ -1,0 +1,27 @@
+NAME: Dan Borah
+
+RESULT:
+I found that the start of the heap was located at 0x800800000 and ended at
+0x801000000.
+
+NOTE: The sample output is a little strange do to the fact that I output redirected the 
+process into `sample-output.txt`. The procstat output comes first while the headers/
+formatting as well as the print statement for the pointer p come after. I think the
+actual sequence of output can be inferred easily.
+
+REASONING:
+Thinking back to class, I initially thought I would need to put data in the malloc 
+allocation to see the heap. Thus, I used memcpy to copy a string into the heap. Yet,
+I became curious as to what the columns of `procstat vm` meant. Upon comparing the 
+values in the 'res' and 'pres' columns as well as looking at a helpful stackoverflow
+post(url below), I spotted the mapping of the heap. I notices that the values of both
+res and pres increased by one after malloc was called. And after looking at the 
+definitions of res and pres, I became convinced this was the heap. Res is the resident
+page count while pres is the resident page count of the process's resident shadow 
+objects. This mades sense to the extent of my knowledge as I know the process's heap is
+private and cannot be accessed by others unlike library mappings. Just to be sure, I
+printed the address of p and it fell in between the start and end of this specific 
+mapping, confirming my suspicions.
+
+URLS:
+https://stackoverflow.com/questions/13653767/what-is-the-difference-between-res-and-pres-fields-in-linux-procstat

@@ -1,0 +1,16 @@
+NAME: Dan Borah
+
+RESULT:
+I found that the memory mapping of this anonymously mapped area of memory was located 
+starting at 0x800244000 and ending at 0x800245000. This is lower than the mapping of
+the heap.
+
+REASONING:
+I copied the contents of wheres-the-heap.c into whither-mmap.c as figured I could retool
+much of the functionality. I replaced the malloc with an mmap call using `MAP_ANONYMOUS`
+and neither specifying a file descriptor (-1) nor an address (NULL). I then examined the
+output, noticing that the output after mmap was larger than before. On closer inspection,
+I noticed that a new memory mapping had been created between the two `procstat vm` calls.
+I also noticed that the address of p was the same as the starting address of this new 
+mapping. Thus, I inferred that this was the new mapping created by my mmap call. And 
+comparing this the address of the heap, this mmap address is lower.

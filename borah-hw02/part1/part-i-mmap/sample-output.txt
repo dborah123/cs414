@@ -1,0 +1,41 @@
+  PID              START                END PRT  RES PRES REF SHD FLAG  TP PATH
+ 1532           0x200000           0x201000 r--    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-mmap/whither-mmap
+ 1532           0x201000           0x202000 r-x    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-mmap/whither-mmap
+ 1532           0x202000           0x203000 r--    1    0   1   0 C---- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-mmap/whither-mmap
+ 1532           0x203000           0x204000 rw-    1    1   1   0 ----- df 
+ 1532        0x800203000        0x800209000 r--    6   29  71   0 CN--- vn /libexec/ld-elf.so.1
+ 1532        0x800209000        0x800220000 r-x   23   29  71   0 CN--- vn /libexec/ld-elf.so.1
+ 1532        0x800220000        0x800221000 r--    1    0   1   0 C---- vn /libexec/ld-elf.so.1
+ 1532        0x800221000        0x800244000 rw-   24   24   1   0 ----- df 
+ 1532        0x800245000        0x8002c9000 r--   92  424  92   0 CN--- vn /lib/libc.so.7
+ 1532        0x8002c9000        0x80041b000 r-x  306  424  92   0 CN--- vn /lib/libc.so.7
+ 1532        0x80041b000        0x800425000 r--   10    0   1   0 C---- vn /lib/libc.so.7
+ 1532        0x800425000        0x80042c000 rw-    7    0   1   0 C---- vn /lib/libc.so.7
+ 1532        0x80042c000        0x800656000 rw-   16   16   1   0 ----- df 
+ 1532        0x800800000        0x801000000 rw-   14   14   1   0 ----- df 
+ 1532     0x7fffdffff000     0x7ffffffdf000 ---    0    0   0   0 ----- -- 
+ 1532     0x7ffffffdf000     0x7ffffffff000 rw-    4    4   1   0 ---D- df 
+ 1532     0x7ffffffff000     0x800000000000 r-x    1    1  28   0 ----- ph 
+  PID              START                END PRT  RES PRES REF SHD FLAG  TP PATH
+ 1532           0x200000           0x201000 r--    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-mmap/whither-mmap
+ 1532           0x201000           0x202000 r-x    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-mmap/whither-mmap
+ 1532           0x202000           0x203000 r--    1    0   1   0 C---- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-mmap/whither-mmap
+ 1532           0x203000           0x204000 rw-    1    1   1   0 ----- df 
+ 1532        0x800203000        0x800209000 r--    6   29  71   0 CN--- vn /libexec/ld-elf.so.1
+ 1532        0x800209000        0x800220000 r-x   23   29  71   0 CN--- vn /libexec/ld-elf.so.1
+ 1532        0x800220000        0x800221000 r--    1    0   1   0 C---- vn /libexec/ld-elf.so.1
+ 1532        0x800221000        0x800244000 rw-   24   24   2   0 ----- df 
+ 1532        0x800244000        0x800245000 ---    0   24   2   0 ----- df 
+ 1532        0x800245000        0x8002c9000 r--   92  424  92   0 CN--- vn /lib/libc.so.7
+ 1532        0x8002c9000        0x80041b000 r-x  306  424  92   0 CN--- vn /lib/libc.so.7
+ 1532        0x80041b000        0x800425000 r--   10    0   1   0 C---- vn /lib/libc.so.7
+ 1532        0x800425000        0x80042c000 rw-    7    0   1   0 C---- vn /lib/libc.so.7
+ 1532        0x80042c000        0x800656000 rw-   16   16   1   0 ----- df 
+ 1532        0x800800000        0x801000000 rw-   14   14   1   0 ----- df 
+ 1532     0x7fffdffff000     0x7ffffffdf000 ---    0    0   0   0 ----- -- 
+ 1532     0x7ffffffdf000     0x7ffffffff000 rw-    4    4   1   0 ---D- df 
+ 1532     0x7ffffffff000     0x800000000000 r-x    1    1  28   0 ----- ph 
+my pid is 1532
+Before mmap
+p address: 0x800244000
+After mmap:

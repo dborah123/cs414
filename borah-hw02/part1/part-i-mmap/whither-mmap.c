@@ -1,10 +1,11 @@
 /*
- * wheres-the-heap.c
+ * whither-mmap.c
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/mman.h>
 
 void wait_for_input(void);
 
@@ -18,23 +19,21 @@ main(int argc, char *argv[])
     char vmcmd[32];
     snprintf(vmcmd, 32, "procstat vm %d", mypid);
 
-    printf("Before malloc:\n");
+    printf("Before mmap\n");
     system(vmcmd);
     wait_for_input();
 
-    char *p = malloc(1024);
-    if(p == NULL) {
-        perror("malloc");
+    char *p = mmap(NULL, 10, PROT_NONE, MAP_ANONYMOUS, -1, 0);
+    if(p == MAP_FAILED) {
+        perror("mmap");
         exit(1);
     }
 
-    printf("After malloc:\n");
+    printf("p address: %p\n", p); 
+
+    printf("After mmap:\n");
     system(vmcmd);
     wait_for_input();
-
-    free(p);
-    printf("After free:\n");
-    system(vmcmd);
 }
 
 void
