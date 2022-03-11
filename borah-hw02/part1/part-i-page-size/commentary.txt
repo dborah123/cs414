@@ -1,0 +1,16 @@
+NAME: Dan Borah
+
+COMMENTARY:
+My idea was to retool the program and script I created for the previous exercise to 
+assist me in this one. THe general idea is to track page faults using dtrace. I can use
+`fbt::vm_fault_trap` entry and return to do so. In particular, I printed the address
+causing the page fault when this handler was called as well as the when the handler was
+unsuccessful. This way, I could see the page faults and parse out what address created a
+segfault. As for my c program, I used mmap to get the MMU to give me a page. Then I 
+iterated through an infinite while loop, moving to the next address and assigning a value
+there. Eventually, this process would reach a point where it crossed the boundary of the 
+page, causing a segfault. My d script notifies me of this and gives me the address.
+
+Overall, my d trace scripts prints out the address of the pagefault created when I call
+mmap as well as the address that causes the segfault (which lies at the end of this 
+mapping).

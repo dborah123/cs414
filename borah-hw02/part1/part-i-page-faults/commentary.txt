@@ -1,0 +1,13 @@
+NAME: Dan Borah
+
+COMMENTARY:
+I first used the grep command you provided to look at the spots where `vm_fault_trap`
+appeared. Looking at the results, I noticed one was a function definition so I checked
+out its location in `usr/src/sys/vm/vm_fault.c`. Looking at this function definition,
+I noticed familiar things such as SIGSEGV. I then created a both a c and d file to test
+things out. In my c file, I planned on doing one successful one and another
+unsuccessful. The succesful one would be using mmap and the unsuccessful one would be 
+trying to store a character at address 0x0. For my d file, I used `fbt::vm_fault_trap`
+to catch the page handler, printing the 1st argument as it is the address that caused
+this fault. Upon return, I checked to see if the return value was 0 or not as this
+denotes if that fault was handled successfully or not.

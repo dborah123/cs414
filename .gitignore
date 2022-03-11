@@ -2,4 +2,7 @@ assignment*/*.pdf
 *.pdf
 wheres-the-heap
 *.o
+*.core
 whither-mmap
+page-faults
+page-size
