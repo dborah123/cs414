@@ -1,0 +1,18 @@
+NAME: Dan Borah
+
+COMMENTARY:
+My thought processes was to use mmap to create mappings in physical memory. Looking at
+the man page, I noticed a flag of interest: MAP_32BIT. Using this flag, I would be able
+to create mappings that were only allowed to be in the 2GB of physical memory. If this
+space filled up and another call to mmap came in, it would complain. Thus, I could use 
+up this space, counting the number of calls to mmap and find the exact point before it
+complains. I could then call another mmap with out `MAP_32BIT` and see if that works,
+just to show that more allocations are available, just not in physical memory.
+
+And while more output didn't come out, one can infer the different procstat calls. In
+total, this confirms that this program gets mapping for all of physical memory. 
+Theoretically, the kernel should be able to give as many mappings as it likes due to
+memory virtualization and the fact that memory can be swapped between disk. Yet, in my
+program, I force it onto phyical memory, ask for a mapping around 2GB, and the kernel
+then complains. Thus, I have shown that I can force 2gb of mappings to only exist on 
+phyical memory.
