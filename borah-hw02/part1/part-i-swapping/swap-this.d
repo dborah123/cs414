@@ -5,19 +5,14 @@
 fbt::vm_fault_trap:entry
 /pid == $target/
 {
-    printf("PAGE FAULT: Address at fault: %p", arg1);
+    self->ts = timestamp;
 }
 
 fbt::vm_fault_trap:return
-/pid == $target && arg1 == 0/
+/pid == $target /
 {
-	printf("Page fault handled successfully");
-}
-
-fbt::vm_fault_trap:return
-/pid == $target && arg1 != 0/
-{
-    printf("Page fault was not handled successfully");
+    @ = quantize(timestamp - self->ts);
+    self->ts = 0;
 }
 
 BEGIN {

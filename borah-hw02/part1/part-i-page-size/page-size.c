@@ -18,8 +18,10 @@ main(int argc, char *argv[])
         exit(1);
     }
 
+    // Use physical memory
     *p = 'a';
 
+    // Iterate until we reach end of memory from mmap call
     while (1) {
         p += 1;
 

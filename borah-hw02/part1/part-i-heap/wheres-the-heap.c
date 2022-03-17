@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-//#include <string.h>
 
 void wait_for_input(void);
 
@@ -29,10 +28,8 @@ main(int argc, char *argv[])
         exit(1);
     }
     printf("p address: %p\n", p); 
-    //char *test_string = "Hello World!";
-    //memcpy(p, test_string, 12);
-
     printf("After malloc:\n");
+
     system(vmcmd);
     wait_for_input();
 

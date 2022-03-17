@@ -33,7 +33,6 @@ main(int argc, char *argv[])
 
     printf("After mmap:\n");
     system(vmcmd);
-    wait_for_input();
 }
 
 void

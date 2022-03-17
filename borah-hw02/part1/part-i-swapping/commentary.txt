@@ -1,1 +1,24 @@
 NAME: Dan Borah
+
+COMMENTARY:
+I was unable to induce swapping despite many attempts. I attempted to solve this problem
+by thrashing memory using mmap, and when I became desperate, malloc. My inital thought 
+was to ask for a massive amount of memory, use it, then ask for another mapping, used 
+it, and then use the old mapping. By doing this, I hoped that the kernel would page out 
+the original allocation for the newly asked one and then page it back in when I wanted 
+to use it again. Sadly, this failed.
+
+My next idea was to thrash it using a giant for loop or an infinite while loop. I provided
+the output in `sample-output.txt`. Yet, this also didn't yield result as no pages were 
+paged in or out. One can see that disk was used, but I cannot be sure if this was swapping.
+I also made sure to use the memory as the kernel will often provide the allocation/virtual
+address but not actually allocated the physical memory. Nonetheless, this also failed.
+
+I then tried malloc, which on a conceptual level, didn't seem likely to succeed. This is
+because malloc uses the heap and is given upon running. This is different to mmap, where
+calling it creates a new mapping. Despite this, malloc was interesting as it really 
+thrahed the system. But this also didn't produce any results.
+
+Overall, I was not able to figure this one out. The last idea I had was overloading the 
+system by created a bunch of new processes using forks that would ask for a lot of new
+allocation. Where do I go from here? Is there a system call I should consider?

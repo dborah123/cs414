@@ -39,7 +39,7 @@ main(int argc, char *argv[])
 
     *p = 'c';
 */
-/*
+
     char *d = mmap(NULL, INT_MAX, PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0);
     *d = 'a';
     printf("here\n");
@@ -55,6 +55,7 @@ main(int argc, char *argv[])
 	*p = 'a';
     }
 
+    *d = 'k';
     free(d);
-*/
+
 }

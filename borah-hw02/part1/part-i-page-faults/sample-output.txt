@@ -1,8 +1,8 @@
 CPU     ID                    FUNCTION:NAME
   0      1                           :BEGIN Program Start
-  0  58225              vm_fault_trap:entry PAGE FAULT: Address at fault: 800244000
+  0  58225              vm_fault_trap:entry PAGE FAULT: Address at fault: 0x800244000
   0  58226             vm_fault_trap:return Page fault handled successfully
-  0  58225              vm_fault_trap:entry PAGE FAULT: Address at fault: 0
+  0  58225              vm_fault_trap:entry PAGE FAULT: Address at fault: 0x0
   0  58226             vm_fault_trap:return Page fault was not handled successfully
   0      2                             :END Program End
 

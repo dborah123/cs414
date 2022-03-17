@@ -5,7 +5,7 @@
 fbt::vm_fault_trap:entry
 /pid == $target/
 {
-    printf("PAGE FAULT: Address at fault: %p", arg1);
+    printf("PAGE FAULT: Address at fault: 0x%p", arg1);
 }
 
 fbt::vm_fault_trap:return
