@@ -1,5 +1,5 @@
 /*
- * maximum-resident.c
+ * swap-this.c
  */
 
 #include <stdio.h>

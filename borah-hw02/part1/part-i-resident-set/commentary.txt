@@ -18,7 +18,7 @@ then complains. Thus, I have shown that I can force 2gb of mappings to only exis
 phyical memory.
 
 REVISION:
-My mistake on my first attempt is I over-thought this problem. I thought that I had to 
+My mistake on my first attempt is I overthought this problem. I thought that I had to 
 use a ton of memory without the chance of swapping. In reality, I can merely use mmap
 regularly. Like before, I have to make sure to actually use a bit of the memory I 
 request as mmap will only give me virtual mappings otherwise. Unlike previously, I will 
