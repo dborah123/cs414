@@ -25,7 +25,7 @@ main(int argc, char *argv[])
 
     /**
      * Causing page fault that isn't handled successfully (attempting to access an
-     * area of outside of process's permission. This should cause a segfault.
+     * area of outside of process's permission). This should cause a segfault.
      */
     int *bad_address = 0x0;
     *bad_address = 1;

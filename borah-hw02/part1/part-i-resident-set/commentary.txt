@@ -6,7 +6,7 @@ the man page, I noticed a flag of interest: MAP_32BIT. Using this flag, I would 
 to create mappings that were only allowed to be in the 2GB of physical memory. If this
 space filled up and another call to mmap came in, it would complain. Thus, I could use 
 up this space, counting the number of calls to mmap and find the exact point before it
-complains. I could then call another mmap with out `MAP_32BIT` and see if that works,
+complains. I could then call another mmap without `MAP_32BIT` and see if that works,
 just to show that more allocations are available, just not in physical memory.
 
 And while more output didn't come out, one can infer the different procstat calls. In
@@ -16,3 +16,14 @@ memory virtualization and the fact that memory can be swapped between disk. Yet,
 program, I force it onto phyical memory, ask for a mapping around 2GB, and the kernel
 then complains. Thus, I have shown that I can force 2gb of mappings to only exist on 
 phyical memory.
+
+REVISION:
+My mistake on my first attempt is I over-thought this problem. I thought that I had to 
+use a ton of memory without the chance of swapping. In reality, I can merely use mmap
+regularly. Like before, I have to make sure to actually use a bit of the memory I 
+request as mmap will only give me virtual mappings otherwise. Unlike previously, I will 
+only use one mmap call instead of many inside a for loop. But, I will make this a large
+mmap call and then touch each byte. By doing this, I can see that there are more 
+mappings taken by my procstat call in my program, displaying that the resident set has 
+grown. Alongside this, I could also run my dtrace script with it and see that many 
+page faults are occurring. Lastly, vmstat would also confirm this too.

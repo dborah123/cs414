@@ -1,65 +1,40 @@
   PID              START                END PRT  RES PRES REF SHD FLAG  TP PATH
-  975           0x200000           0x201000 r--    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x201000           0x202000 r-x    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x202000           0x203000 r--    1    0   1   0 C---- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x203000           0x204000 rw-    1    1   1   0 ----- df 
-  975        0x800203000        0x800209000 r--    6   29  71   0 CN--- vn /libexec/ld-elf.so.1
-  975        0x800209000        0x800220000 r-x   23   29  71   0 CN--- vn /libexec/ld-elf.so.1
-  975        0x800220000        0x800221000 r--    1    0   1   0 C---- vn /libexec/ld-elf.so.1
-  975        0x800221000        0x800244000 rw-   24   24   1   0 ----- df 
-  975        0x800245000        0x8002c9000 r--   92  424  92   0 CN--- vn /lib/libc.so.7
-  975        0x8002c9000        0x80041b000 r-x  306  424  92   0 CN--- vn /lib/libc.so.7
-  975        0x80041b000        0x800425000 r--   10    0   1   0 C---- vn /lib/libc.so.7
-  975        0x800425000        0x80042c000 rw-    7    0   1   0 C---- vn /lib/libc.so.7
-  975        0x80042c000        0x800656000 rw-   16   16   1   0 ----- df 
-  975        0x800800000        0x801000000 rw-   14   14   1   0 ----- df 
-  975     0x7fffdffff000     0x7ffffffdf000 ---    0    0   0   0 ----- -- 
-  975     0x7ffffffdf000     0x7ffffffff000 rw-    4    4   1   0 ---D- df 
-  975     0x7ffffffff000     0x800000000000 r-x    1    1  28   0 ----- ph 
+  916           0x200000           0x201000 r--    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
+  916           0x201000           0x202000 r-x    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
+  916           0x202000           0x203000 r--    1    0   1   0 C---- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
+  916           0x203000           0x204000 rw-    1    1   1   0 ----- df 
+  916        0x800203000        0x800209000 r--    6   29  63   0 CN--- vn /libexec/ld-elf.so.1
+  916        0x800209000        0x800220000 r-x   23   29  63   0 CN--- vn /libexec/ld-elf.so.1
+  916        0x800220000        0x800221000 r--    1    0   1   0 C---- vn /libexec/ld-elf.so.1
+  916        0x800221000        0x800244000 rw-   24   24   1   0 ----- df 
+  916        0x800245000        0x8002c9000 r--   92  424  82   0 CN--- vn /lib/libc.so.7
+  916        0x8002c9000        0x80041b000 r-x  306  424  82   0 CN--- vn /lib/libc.so.7
+  916        0x80041b000        0x800425000 r--   10    0   1   0 C---- vn /lib/libc.so.7
+  916        0x800425000        0x80042c000 rw-    7    0   1   0 C---- vn /lib/libc.so.7
+  916        0x80042c000        0x800656000 rw-   16   16   1   0 ----- df 
+  916        0x800800000        0x801000000 rw-   14   14   1   0 ----- df 
+  916     0x7fffdffff000     0x7ffffffdf000 ---    0    0   0   0 ----- -- 
+  916     0x7ffffffdf000     0x7ffffffff000 rw-    4    4   1   0 ---D- df 
+  916     0x7ffffffff000     0x800000000000 r-x    1    1  25   0 ----- ph 
   PID              START                END PRT  RES PRES REF SHD FLAG  TP PATH
-  975             0x1000           0x1f5000 ---    0    0   0   0 ----- -- 
-  975           0x200000           0x201000 r--    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x201000           0x202000 r-x    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x202000           0x203000 r--    1    0   1   0 C---- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x203000           0x204000 rw-    1    1   2   0 ----- df 
-  975           0x204000         0x7ffea000 ---    0    1   2   0 ----- df 
-  975        0x800203000        0x800209000 r--    6   29  71   0 CN--- vn /libexec/ld-elf.so.1
-  975        0x800209000        0x800220000 r-x   23   29  71   0 CN--- vn /libexec/ld-elf.so.1
-  975        0x800220000        0x800221000 r--    1    0   1   0 C---- vn /libexec/ld-elf.so.1
-  975        0x800221000        0x800244000 rw-   24   24   1   0 ----- df 
-  975        0x800245000        0x8002c9000 r--   92  424  92   0 CN--- vn /lib/libc.so.7
-  975        0x8002c9000        0x80041b000 r-x  306  424  92   0 CN--- vn /lib/libc.so.7
-  975        0x80041b000        0x800425000 r--   10    0   1   0 C---- vn /lib/libc.so.7
-  975        0x800425000        0x80042c000 rw-    7    0   1   0 C---- vn /lib/libc.so.7
-  975        0x80042c000        0x800656000 rw-   16   16   1   0 ----- df 
-  975        0x800800000        0x801000000 rw-   14   14   1   0 ----- df 
-  975     0x7fffdffff000     0x7ffffffdf000 ---    0    0   0   0 ----- -- 
-  975     0x7ffffffdf000     0x7ffffffff000 rw-    4    4   1   0 ---D- df 
-  975     0x7ffffffff000     0x800000000000 r-x    1    1  28   0 ----- ph 
-  PID              START                END PRT  RES PRES REF SHD FLAG  TP PATH
-  975             0x1000           0x1f5000 ---    0    0   0   0 ----- -- 
-  975           0x200000           0x201000 r--    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x201000           0x202000 r-x    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x202000           0x203000 r--    1    0   1   0 C---- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
-  975           0x203000           0x204000 rw-    1    1   2   0 ----- df 
-  975           0x204000         0x7ffea000 ---    0    1   2   0 ----- df 
-  975        0x800203000        0x800209000 r--    6   29  71   0 CN--- vn /libexec/ld-elf.so.1
-  975        0x800209000        0x800220000 r-x   23   29  71   0 CN--- vn /libexec/ld-elf.so.1
-  975        0x800220000        0x800221000 r--    1    0   1   0 C---- vn /libexec/ld-elf.so.1
-  975        0x800221000        0x800244000 rw-   24   24   1   0 ----- df 
-  975        0x800245000        0x8002c9000 r--   92  424  92   0 CN--- vn /lib/libc.so.7
-  975        0x8002c9000        0x80041b000 r-x  306  424  92   0 CN--- vn /lib/libc.so.7
-  975        0x80041b000        0x800425000 r--   10    0   1   0 C---- vn /lib/libc.so.7
-  975        0x800425000        0x80042c000 rw-    7    0   1   0 C---- vn /lib/libc.so.7
-  975        0x80042c000        0x800656000 rw-   16   16   2   0 ----- df 
-  975        0x800656000        0x80066f000 ---    0   16   2   0 ----- df 
-  975        0x800800000        0x801000000 rw-   14   14   1   0 ----- df 
-  975     0x7fffdffff000     0x7ffffffdf000 ---    0    0   0   0 ----- -- 
-  975     0x7ffffffdf000     0x7ffffffff000 rw-    4    4   1   0 ---D- df 
-  975     0x7ffffffff000     0x800000000000 r-x    1    1  28   0 ----- ph 
-my pid is 975
+  916           0x200000           0x201000 r--    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
+  916           0x201000           0x202000 r-x    1    5   3   0 CN--- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
+  916           0x202000           0x203000 r--    1    0   1   0 C---- vn /usr/home/dborah/CS414/borah-hw02/part1/part-i-resident-set/maximum-resident
+  916           0x203000           0x204000 rw-    1    1   1   0 ----- df 
+  916        0x800203000        0x800209000 r--    6   29  63   0 CN--- vn /libexec/ld-elf.so.1
+  916        0x800209000        0x800220000 r-x   23   29  63   0 CN--- vn /libexec/ld-elf.so.1
+  916        0x800220000        0x800221000 r--    1    0   1   0 C---- vn /libexec/ld-elf.so.1
+  916        0x800221000        0x800244000 rw-   24   24   1   0 ----- df 
+  916        0x800245000        0x8002c9000 r--   92  424  82   0 CN--- vn /lib/libc.so.7
+  916        0x8002c9000        0x80041b000 r-x  306  424  82   0 CN--- vn /lib/libc.so.7
+  916        0x80041b000        0x800425000 r--   10    0   1   0 C---- vn /lib/libc.so.7
+  916        0x800425000        0x80042c000 rw-    7    0   1   0 C---- vn /lib/libc.so.7
+  916        0x80042c000        0x800656000 rw-   16   41   2   0 ----- df 
+  916        0x800656000        0x80066f000 -w-   25   41   2   0 ----- df 
+  916        0x800800000        0x801000000 rw-   14   14   1   0 ----- df 
+  916     0x7fffdffff000     0x7ffffffdf000 ---    0    0   0   0 ----- -- 
+  916     0x7ffffffdf000     0x7ffffffff000 rw-    4    4   1   0 ---D- df 
+  916     0x7ffffffff000     0x800000000000 r-x    1    1  25   0 ----- ph 
+my pid is 916
 Before mmap
 After mmap:
-One more mmap but without `MAP_32BIT`
-One more allocation in phys mem to show that physical memory is full
-mmap: Cannot allocate memory

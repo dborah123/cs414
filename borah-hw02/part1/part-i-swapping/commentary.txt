@@ -22,3 +22,15 @@ thrahed the system. But this also didn't produce any results.
 Overall, I was not able to figure this one out. The last idea I had was overloading the 
 system by created a bunch of new processes using forks that would ask for a lot of new
 allocation. Where do I go from here? Is there a system call I should consider?
+
+REVISION:
+I had a somewhat close idea as to how to figure out this problem, but overcomplicated it by
+being too aggressive with how I implemented it. This time around, I made sure to allocate
+around 2GBs of memory with a single mmap call. This is around INT_MAX (2^32). I then used
+a for loop that iterated through each address in the mapping created, putting a value in
+that place. In doing this, I was able to fill up physical memory, forcing the system to 
+use swap space, paging out pages. I know this occurred as the fre column (which 
+represents the memory still availible) steadily decreased. Then, once the system began
+swapping, in the po (paged out) column, numbers began to appear. This meant that some of
+the pages I had allocated in my mmap call were being paged out due to the volume of 
+memory being used.

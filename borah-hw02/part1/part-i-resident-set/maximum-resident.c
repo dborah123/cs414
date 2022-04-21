@@ -22,40 +22,18 @@ main(int argc, char *argv[])
     system(vmcmd);
 
     char *p;
+    p = mmap(NULL, 100000, PROT_WRITE, MAP_ANONYMOUS, -1, 0);
+    if (p == MAP_FAILED) {
+        perror("mmap");
+        exit(1);
+    }
 
     // Request a ton of memory
-    for (int i = 0; i < 20970; i++) {
-
-        p = mmap(NULL, 100000, PROT_NONE, MAP_ANON | MAP_PRIVATE | MAP_32BIT, -1, 0);
-
-        if (p == MAP_FAILED) {
-            perror("mmap");
-            exit(1);
-        }
+    for (int i = 0; i < 100000; i++) {
+       *p = 'a';
+       p++;
     }
-
     printf("After mmap:\n");
     system(vmcmd);
-    
-    // Request one more mmap. Should put it in swap, but it is unclear after I tried
-    // the last part
-    printf("One more mmap but without `MAP_32BIT`\n");
-    p = mmap(NULL, 100000, PROT_NONE, MAP_ANON | MAP_PRIVATE, -1, 0);
-
-    if (p == MAP_FAILED) {
-        perror("mmap");
-        exit(1);
-    }
-	
-    system(vmcmd);
- 
-    // Ask for one more mapping with MAP_32BIT
-    printf("One more allocation in phys mem to show that physical memory is full\n");
-    p = mmap(NULL, 100000, PROT_NONE, MAP_ANON | MAP_PRIVATE | MAP_32BIT, -1, 0);
-
-    if (p == MAP_FAILED) {
-        perror("mmap");
-        exit(1);
-    }	
 }
 

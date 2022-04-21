@@ -14,3 +14,12 @@ page, causing a segfault. My d script notifies me of this and gives me the addre
 Overall, my d trace scripts prints out the address of the pagefault created when I call
 mmap as well as the address that causes the segfault (which lies at the end of this 
 mapping).
+
+REVISION:
+Technically, my program worked before. But, I learned I could do it without a page fault.
+Instead of only requesting one page, I could request a bunch. Then, starting at the first
+one, I could put a value in each byte of memory and more on to the next one. Eventually, 
+I would reach the end of this first page. But since I request a large amount of memory, I
+have more pages that have contiguous mappings. Thus, around ~4000 increments, I would 
+receive a page fault and my dtrace script would show me the virtual address of this fault.
+In doing this, I was able to find the size of a page without causing a page fault.
